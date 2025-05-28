@@ -3,6 +3,15 @@ include:
 
 # To ensure that the container processes the locally modified `service_conf.yaml.template` instead of the one included in its image, you need to mount the local `service_conf.yaml.template` to the container.
 services:
+  certbot:
+    image: certbot/certbot:latest
+    depends_on:
+      - ragflow
+    command: >-
+             certonly --reinstall --webroot --webroot-path=/var/www/certbot --email faraaz@samtek.io --agree-tos --no-eff-email -d ai.samtek.io
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
   ragflow:
     depends_on:
       mysql:
@@ -30,6 +39,7 @@ services:
       - ./nginx/ragflow.conf:/etc/nginx/conf.d/ragflow.conf
       - ./nginx/proxy.conf:/etc/nginx/proxy.conf
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./certbot/www/:/var/www/certbot/:ro
       - ../history_data_agent:/ragflow/history_data_agent
       - ./service_conf.yaml.template:/ragflow/conf/service_conf.yaml.template
       - ./entrypoint.sh:/ragflow/entrypoint.sh

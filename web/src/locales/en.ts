@@ -107,7 +107,7 @@ export default {
       action: 'Action',
       parsingStatus: 'Parsing Status',
       parsingStatusTip:
-        'Document parsing time varies based on several factors. Enabling features like Knowledge Graph, RAPTOR, Auto Question Extraction, or Auto Keyword Extraction will significantly increase processing time. If the progress bar stalls, please con
+        'Document parsing time varies based on several factors. Enabling features like Knowledge Graph, RAPTOR, Auto Question Extraction, or Auto Keyword Extraction will significantly increase processing time.',
       processBeginAt: 'Begin at',
       processDuration: 'Duration',
       progressMsg: 'Progress',

@@ -55,10 +55,10 @@ export default {
       nicknamePlaceholder: 'Please input nickname',
       register: 'Create an account',
       continue: 'Continue',
-      title: 'Start building your smart assistants.',
+      title: 'Our own smart assistant.',
       description:
-        'Sign up for free to explore top RAG technology. Create knowledge bases and AIs to empower your business.',
-      review: 'from 500+ reviews',
+        'Sign up with your samtek.io email to explore. Create knowledge bases and AIs to improve your daily routine.',
+      review: '',
     },
     header: {
       knowledgeBase: 'Knowledge Base',
@@ -107,15 +107,15 @@ export default {
       action: 'Action',
       parsingStatus: 'Parsing Status',
       parsingStatusTip:
-        'Document parsing time varies based on several factors. Enabling features like Knowledge Graph, RAPTOR, Auto Question Extraction, or Auto Keyword Extraction will significantly increase processing time. If the progress bar stalls, please consult these two FAQs: https://ragflow.io/docs/dev/faq#why-does-my-document-parsing-stall-at-under-one-percent.',
+        'Document parsing time varies based on several factors. Enabling features like Knowledge Graph, RAPTOR, Auto Question Extraction, or Auto Keyword Extraction will significantly increase processing time. If the progress bar stalls, please con
       processBeginAt: 'Begin at',
       processDuration: 'Duration',
       progressMsg: 'Progress',
       testingDescription:
-        'Conduct a retrieval test to check if RAGFlow can recover the intended content for the LLM. If you have adjusted the default settings, such as keyword similarity weight or similarity threshold, to achieve the optimal results, be aware that these changes will not be automatically saved. You must apply them to your chat assistant settings or the Retrieval agent component settings.',
+        'Conduct a retrieval test to check if we can recover the intended content for the LLM. If you have adjusted the default settings, such as keyword similarity weight or similarity threshold, to achieve the optimal results, be aware that these changes will not be automatically saved. You must apply them to your chat assistant settings or the Retrieval agent component settings.',
       similarityThreshold: 'Similarity threshold',
       similarityThresholdTip:
-        'RAGFlow employs either a combination of weighted keyword similarity and weighted vector cosine similarity, or a combination of weighted keyword similarity and weighted reranking score during retrieval. This parameter sets the threshold for similarities between the user query and chunks. Any chunk with a similarity score below this threshold will be excluded from the results. By default, the threshold is set to 0.2. This means that only chunks with hybrid similarity score of 20 or higher will be retrieved.',
+        'This application employs either a combination of weighted keyword similarity and weighted vector cosine similarity, or a combination of weighted keyword similarity and weighted reranking score during retrieval. This parameter sets the threshold for similarities between the user query and chunks. Any chunk with a similarity score below this threshold will be excluded from the results. By default, the threshold is set to 0.2. This means that only chunks with hybrid similarity score of 20 or higher will be retrieved.',
       vectorSimilarityWeight: 'Keyword similarity weight',
       vectorSimilarityWeightTip:
         'This sets the weight of keyword similarity in the combined similarity score, either used with vector cosine similarity or with reranking score. The total of the two weights must equal 1.0.',
@@ -156,13 +156,13 @@ export default {
       changeSpecificCategory: 'Change specific category',
       uploadTitle: 'Drag and drop your file here to upload',
       uploadDescription:
-        'Supports single or batch file upload. For a locally deployed RAGFlow: the total file size limit per upload is 1GB, with a batch upload limit of 32 files. There is no cap on the total number of files per account. For demo.ragflow.io, the total file size limit per upload is 10MB, with each file not exceeding 10MB and a maximum of 128 files per account.',
+        'Supports single or batch file upload. For a locally deployed Flow: the total file size limit per upload is 1GB, with a batch upload limit of 32 files. There is no cap on the total number of files per account. For this site, the total file size limit per upload is 10MB, with each file not exceeding 10MB and a maximum of 128 files per account.',
       chunk: 'Chunk',
       bulk: 'Bulk',
       cancel: 'Cancel',
       rerankModel: 'Rerank model',
       rerankPlaceholder: 'Please select',
-      rerankTip: `If left empty, RAGFlow will use a combination of weighted keyword similarity and weighted vector cosine similarity; if a rerank model is selected, a weighted reranking score will replace the weighted vector cosine similarity. Please be aware that using a rerank model will significantly increase the system's response time.`,
+      rerankTip: `If left empty, we will use a combination of weighted keyword similarity and weighted vector cosine similarity; if a rerank model is selected, a weighted reranking score will replace the weighted vector cosine similarity. Please be aware that using a rerank model will significantly increase the system's response time.`,
       topK: 'Top-K',
       topKTip: `Used together with the Rerank model, this setting defines the number of text chunks to be sent to the specified reranking model.`,
       delimiter: `Delimiter for text`,
@@ -243,7 +243,7 @@ export default {
       book: `<p>Supported file formats are <b>DOCX</b>, <b>PDF</b>, <b>TXT</b>.</p><p>
       For each book in PDF, please set the <i>page ranges</i> to remove unwanted information and reduce analysis time.</p>`,
       laws: `<p>Supported file formats are <b>DOCX</b>, <b>PDF</b>, <b>TXT</b>.</p><p>
-      Legal documents typically follow a rigorous writing format. We use text feature to identify split point. 
+      Legal documents typically follow a rigorous writing format. We use text feature to identify split point.
       </p><p>
       The chunk has a granularity consistent with 'ARTICLE', ensuring all upper level text is included in the chunk.
       </p>`,
@@ -257,7 +257,7 @@ export default {
       <li>Then, combine adjacent segments until the token count exceeds the threshold specified by 'Chunk token number for text', at which point a chunk is created.</li></p>`,
       paper: `<p>Only <b>PDF</b> file is supported.</p><p>
       Papers will be split by section, such as <i>abstract, 1.1, 1.2</i>. </p><p>
-      This approach enables the LLM to summarize the paper more effectively and to provide more comprehensive, understandable responses. 
+      This approach enables the LLM to summarize the paper more effectively and to provide more comprehensive, understandable responses.
       However, it also increases the context for AI conversations and adds to the computational cost for the LLM. So during a conversation, consider reducing the value of ‘<b>topN</b>’.</p>`,
       presentation: `<p>Supported file formats are <b>PDF</b>, <b>PPTX</b>.</p><p>
       Every page in the slides is treated as a chunk, with its thumbnail image stored.</p><p>
@@ -328,7 +328,7 @@ export default {
 `,
       useRaptor: 'Use RAPTOR to enhance retrieval',
       useRaptorTip:
-        'Enable RAPTOR for multi-hop question-answering tasks. See https://ragflow.io/docs/dev/enable_raptor for details.',
+        'Enable RAPTOR for multi-hop question-answering tasks'
       prompt: 'Prompt',
       promptTip:
         'Use the system prompt to describe the task for the LLM, specify how it should respond, and outline other miscellaneous requirements. The system prompt is often used in conjunction with keys (variables), which serve as various data inputs for the LLM. Use a forward slash `/` or the (x) button to show the keys to use.',
@@ -351,7 +351,7 @@ The above is the content you need to summarize.`,
       entityTypes: 'Entity types',
       vietnamese: 'Vietnamese',
       pageRank: 'Page rank',
-      pageRankTip: `You can assign a higher PageRank score to specific knowledge bases during retrieval. The corresponding score is added to the hybrid similarity scores of retrieved chunks from these knowledge bases, increasing their ranking. See https://ragflow.io/docs/dev/set_page_rank for details.`,
+      pageRankTip: `You can assign a higher PageRank score to specific knowledge bases during retrieval. The corresponding score is added to the hybrid similarity scores of retrieved chunks from these knowledge bases, increasing their ranking`,
       tagName: 'Tag',
       frequency: 'Frequency',
       searchTags: 'Search tags',
@@ -359,7 +359,7 @@ The above is the content you need to summarize.`,
       tagTable: 'Table',
       tagSet: 'Tag sets',
       tagSetTip: `
-     <p> Select one or multiple tag knowledge bases to auto-tag chunks in your knowledge base. See https://ragflow.io/docs/dev/use_tag_sets for details.</p>
+     <p> Select one or multiple tag knowledge bases to auto-tag chunks in your knowledge base.</p>
 <p>The user query will also be auto-tagged.</p>
 This auto-tagging feature enhances retrieval by adding another layer of domain-specific knowledge to the existing dataset.
 <p>Difference between auto-tag and auto-keyword:</p>
@@ -374,7 +374,7 @@ This auto-tagging feature enhances retrieval by adding another layer of domain-s
       addTag: 'Add tag',
       useGraphRag: 'Extract knowledge graph',
       useGraphRagTip:
-        'Construct a knowledge graph over file chunks of the current knowledge base to enhance multi-hop question-answering involving nested logic. See https://ragflow.io/docs/dev/construct_knowledge_graph for details.',
+        'Construct a knowledge graph over file chunks of the current knowledge base to enhance multi-hop question-answering involving nested logic. ',
       graphRagMethod: 'Method',
       graphRagMethodTip: `Light: (Default) Use prompts provided by github.com/HKUDS/LightRAG to extract entities and relationships. This option consumes fewer tokens, less memory, and fewer computational resources.</br>
         General: Use prompts provided by github.com/microsoft/graphrag to extract entities and relationships`,
@@ -446,7 +446,7 @@ This auto-tagging feature enhances retrieval by adding another layer of domain-s
       topN: 'Top N',
       topNTip: `Not all chunks with similarity score above the 'similarity threshold' will be sent to the LLM. This selects 'Top N' chunks from the retrieved ones.`,
       variable: 'Variable',
-      variableTip: `Used together with RAGFlow's chat assistant management APIs, variables can help develop more flexible system prompt strategies. The defined variables will be used by 'System prompt' as part of the prompts for the LLM. {knowledge} is a reserved special variable representing chunks retrieved from specified knowledge base(s), and all variables should be enclosed in curly braces {} in the 'System prompt'. See https://ragflow.io/docs/dev/set_chat_variables for details.`,
+      variableTip: `Used together with the chat assistant management APIs, variables can help develop more flexible system prompt strategies. The defined variables will be used by 'System prompt' as part of the prompts for the LLM. {knowledge} is a reserved special variable representing chunks retrieved from specified knowledge base(s), and all variables should be enclosed in curly braces {} in the 'System prompt'.`,
       add: 'Add',
       key: 'Key',
       optional: 'Optional',
@@ -511,7 +511,7 @@ This auto-tagging feature enhances retrieval by adding another layer of domain-s
       extensionTitle: 'Chrome Extension',
       tokenError: 'Please create API key first.',
       betaError:
-        'Please acquire a RAGFlow API key from the System Settings page first.',
+        'Please acquire an API key from the System Settings page first.',
       searching: 'Searching...',
       parsing: 'Parsing',
       uploading: 'Uploading',
@@ -609,18 +609,18 @@ This auto-tagging feature enhances retrieval by adding another layer of domain-s
         'The default chat model for each newly created knowledge base.',
       embeddingModel: 'Embedding model',
       embeddingModelTip:
-        'The default embedding model for each newly created knowledge base. If you cannot find an embedding model from the dropdown, check if you are using RAGFlow slim edition (which does not include embedding models) or check https://ragflow.io/docs/dev/supported_models to see if your model provider supports this model.',
+        'The default embedding model for each newly created knowledge base. If you cannot find an embedding model from the dropdown, check if you are using the  slim edition (which does not include embedding models)',
       img2txtModel: 'Img2txt model',
       img2txtModelTip:
-        'The default img2txt model for each newly created knowledge base. It describes a picture or video. If you cannot find a model from the dropdown, check https://ragflow.io/docs/dev/supported_models to see if your model provider supports this model.',
+        'The default img2txt model for each newly created knowledge base. It describes a picture or video. If you cannot find a model from the dropdown, check to see if your model provider supports this model.',
       sequence2txtModel: 'Speech2txt model',
       sequence2txtModelTip:
         'The default ASR model for each newly created knowledgebase. Use this model to translate voices to corresponding text.',
       rerankModel: 'Rerank model',
-      rerankModelTip: `The default rerank model for reranking chunks. If you cannot find a model from the dropdown, check https://ragflow.io/docs/dev/supported_models to see if your model provider supports this model.`,
+      rerankModelTip: `The default rerank model for reranking chunks. If you cannot find a model from the dropdown, check to see if your model provider supports this model.`,
       ttsModel: 'TTS Model',
       ttsModelTip:
-        'The default text-to-speech model. If you cannot find a model from the dropdown, check https://ragflow.io/docs/dev/supported_models to see if your model provider supports this model.',
+        'The default text-to-speech model. If you cannot find a model from the dropdown, check to see if your model provider supports this model.',
       workspace: 'Workspace',
       upgrade: 'Upgrade',
       addLlmTitle: 'Add LLM',
@@ -770,7 +770,7 @@ This auto-tagging feature enhances retrieval by adding another layer of domain-s
       directory: 'Directory',
       uploadTitle: 'Drag and drop your file here to upload',
       uploadDescription:
-        'Supports single or batch file upload. For a locally deployed RAGFlow: the total file size limit per upload is 1GB, with a batch upload limit of 32 files. There is no cap on the total number of files per account. For demo.ragflow.io, the total file size limit per upload is 10MB, with each file not exceeding 10MB and a maximum of 128 files per account.',
+        'Supports single or batch file upload. For a locally deployed assistant: the total file size limit per upload is 1GB, with a batch upload limit of 32 files. There is no cap on the total number of files per account. The total file size limit per upload is 10MB, with each file not exceeding 10MB and a maximum of 128 files per account.',
       local: 'Local uploads',
       s3: 'S3 uploads',
       preview: 'Preview',

@@ -78,9 +78,6 @@ const RightToolBar = () => {
           </Space>
         </Dropdown>
         <Circle>
-          <CircleHelp className="size-4" onClick={handleDocHelpCLick} />
-        </Circle>
-        <Circle>
           {theme === 'dark' ? (
             <MoonIcon onClick={onMoonClick} size={20} />
           ) : (
